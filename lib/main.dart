@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:weed_app/screens/homeScreen.dart';
+import 'package:weed_app/screens/productDetailScreen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,9 +11,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      theme: ThemeData(primaryColor: Color.fromARGB(255, 19, 91, 21)),
       title: 'Flutter Demo',
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      home: MyHomePage(title: 'THC'),
+      routes: {
+        ProductDetailScreen.routeName: (context) => const ProductDetailScreen()
+      },
     );
   }
 }
@@ -26,18 +32,14 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
-        
+        backgroundColor: Theme.of(context).primaryColor,
         title: Text(widget.title),
       ),
-      body: Center(
-        child: Text("This is Weed"),
-      ),
+      body: HomeScreen(),
     );
   }
 }

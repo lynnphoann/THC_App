@@ -3,7 +3,7 @@ class ProductModel {
   String productName;
   String sellerName;
   String description;
-  int ratingStar;
+  double ratingStar;
   bool favorite;
   ProductModel({
     required this.url,
@@ -14,4 +14,3 @@ class ProductModel {
     this.favorite = false,
   });
 }
-
