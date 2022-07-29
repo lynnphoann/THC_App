@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:weed_app/DummyData.dart';
 import 'package:weed_app/screens/homeScreen.dart';
 import 'package:weed_app/screens/productDetailScreen.dart';
 
@@ -11,13 +13,17 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(primaryColor: Color.fromARGB(255, 19, 91, 21)),
-      title: 'Flutter Demo',
-      home: MyHomePage(title: 'THC'),
-      routes: {
-        ProductDetailScreen.routeName: (context) => const ProductDetailScreen()
-      },
+    return ChangeNotifierProvider(
+      create: (context) => dummyProcuctDatas(),
+      child: MaterialApp(
+        theme: ThemeData(primaryColor: Color.fromARGB(255, 19, 91, 21)),
+        title: 'Flutter Demo',
+        home: MyHomePage(title: 'THC'),
+        routes: {
+          ProductDetailScreen.routeName: (context) =>
+              const ProductDetailScreen()
+        },
+      ),
     );
   }
 }

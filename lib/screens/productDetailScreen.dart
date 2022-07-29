@@ -9,7 +9,7 @@ class ProductDetailScreen extends StatelessWidget {
     final String username =
         ModalRoute.of(context)!.settings.arguments as String;
     return Container(
-      child: Center(child: Text(username)),
+      child: Scaffold(body: Center(child: Text(username))),
     );
   }
 }
