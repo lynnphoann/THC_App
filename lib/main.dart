@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:weed_app/DummyData.dart';
+import 'package:weed_app/dummyProductDatas.dart';
 import 'package:weed_app/screens/homeScreen.dart';
 import 'package:weed_app/screens/productDetailScreen.dart';
 
